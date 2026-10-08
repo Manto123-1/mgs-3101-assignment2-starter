@@ -23,3 +23,15 @@ print(data.groupby("country")["order_value_EUR"].sum())
 #biggest and smallest orders
 print(data[data[ "order_value_EUR"]==data["order_value_EUR"].max()])
 print(data [data["order_value_EUR"]==data["order_value_EUR" ].min()]) 
+
+#check if average order meets the goal
+average_order = data["order_value_EUR"].mean()
+if average_order >= 100000:
+    print("average order is at least 100000")
+else:
+    print("average order is below 100000")
+
+#quick summary
+print("total orders:", len(data))
+print("average order value:", average_order)
+print("total revenue:", data["order_value_EUR"].sum())
