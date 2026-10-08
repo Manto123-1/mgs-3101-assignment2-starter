@@ -16,3 +16,10 @@ print(data.isna().sum())
 ##check the numbers
 print(data["order_value_EUR"].describe())
 print(data["cost"].describe())
+
+#total sales by country
+print(data.groupby("country")["order_value_EUR"].sum())
+
+#biggest and smallest orders
+print(data[data[ "order_value_EUR"]==data["order_value_EUR"].max()])
+print(data [data["order_value_EUR"]==data["order_value_EUR" ].min()]) 
